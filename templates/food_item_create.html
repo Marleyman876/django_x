@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% comment %} <ul>
+    {% for Food_Item in object_list %}
+        <li>
+            <a href="{% url 'food_item_detail' Food_item.pk %}">{{ Food_item.name }}</a>
+        </li>
+    {% endfor %}
+</ul> {% endcomment %}
+
+<h2>Add Item you want to the List</h2>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="SAVE">
+</form>
+
+{% endblock content %}
